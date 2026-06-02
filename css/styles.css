@@ -1,0 +1,126 @@
+:root {
+  --primaria: #ffffff;
+  --secundaria: #6E8867;
+  --preto: #0f172a;
+  --sombra: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+@media (prefers-color-scheme: dark) {
+
+}
+
+body { 
+    background-color: var(--secundaria);
+    background-image: url("../img/Background.png");
+    background-repeat: repeat;
+    background-size: 1150px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Playfair Display';
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* cabeçalho */
+
+header{
+    background-color: var(--primaria);
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    gap: 20px;
+    box-shadow: var(--sombra);
+}
+
+header button{
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+}
+
+header a{
+    text-decoration: none;
+    color: var(--preto);
+    padding: 10px;
+}
+
+#links{
+    margin-left: auto;
+}
+
+.logo{
+    width: 100px;
+    height: 100px;
+}
+
+/* banner */
+
+#imagemBanner{
+    position: relative;
+    height: 500px;
+    width: 100%;
+    padding: 10px;
+    object-fit: cover;
+}
+
+#galeria img{
+    height: 200px;
+    width: 33%;
+    padding: 10px;
+    object-fit: cover;
+}
+
+#banner h1{
+    position: absolute;
+    z-index: 1;
+    color: var(--preto);
+    left: 47%;
+    margin-top: 230px;
+}
+
+#banner h3{
+    font-style: italic;
+    position: absolute;
+    z-index: 1;
+    color: var(--preto);
+    left: 44.4%;
+    margin-top: 280px;
+}
+
+/* produtos */
+
+#produtos h1{
+    color: var(--primaria);
+    text-align: center;
+    padding: 15px;
+}
+
+#cardsProdutos{
+    display: flex;
+    padding: 10px;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.card{
+    background-color: var(--primaria);
+}
+
+.card #nomeTexto{
+    padding: 3px;
+    max-width: 300px;
+    font-style: oblique;
+}
+
+.card img{
+    width: 304px;
+    height: 180px;
+    object-fit: cover;
+}
