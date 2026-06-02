@@ -2,6 +2,7 @@
   --primaria: #ffffff;
   --secundaria: #6E8867;
   --preto: #0f172a;
+  --cinza: rgba(25, 35, 60, 0.563);
   --sombra: 0 8px 30px rgba(0, 0, 0, 0.2);
 }
 
@@ -113,11 +114,19 @@ header a{
     background-color: var(--primaria);
 }
 
-.card #nomeTexto{
-    padding: 3px;
+.card p{
+    padding: 5px;
     max-width: 300px;
-    font-style: oblique;
 }
+
+.card #nomeTexto{
+    font-style: italic;
+}
+
+.card #descricaoTexto{
+    color: var(--cinza);
+}
+
 
 .card img{
     width: 304px;
