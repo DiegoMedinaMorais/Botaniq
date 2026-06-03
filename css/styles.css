@@ -7,7 +7,7 @@
   --sombra: 0 8px 30px rgba(0, 0, 0, 0.2);
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   :root {
     --primaria: #425234;
     --secundaria: #38452c;
@@ -72,7 +72,6 @@ header a {
 }
 
 .logo {
-  width: 100px;
   height: 100px;
 }
 
@@ -483,6 +482,7 @@ footer h3 {
   align-items: center;
   justify-content: center;
   margin-top: 135px;
+  margin-bottom: 20px;
 }
 
 #avaliacoes h1 {
@@ -526,4 +526,45 @@ footer h3 {
 .nota::placeholder {
   color: var(--cinza);
   font-size: large;
+}
+
+/* avaliações registradas */
+
+#avaliacoesCards {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.cardC{
+  background-color: var(--secundaria);
+  transition: 0.3s;
+}
+.cardC:hover{
+  transform: scale(1.035);
+}
+
+.cardC p {
+  padding: 5px;
+  width: 300px;
+  height: 345px;
+}
+
+.cardC #nomeCliente {
+  font-style: italic;
+  color: var(--preto);
+}
+
+.cardC #notaC {
+  font-style: italic;
+  color: var(--preto);
+    margin-top: -315px;
+}
+
+.cardC #mensagemC {
+  color: var(--cinza);
+  position: absolute;
+  margin-top: -315px;
 }
