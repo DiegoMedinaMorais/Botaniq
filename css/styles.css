@@ -1,20 +1,28 @@
 :root {
   --primaria: #ffffff;
-  --secundaria: #aeb89f;
-  --secundariaEscura: #4c553e;
+  --secundaria: #f0f0f0;
+  --background: #aeb89f;
   --preto: #0f172a;
   --cinza: rgba(25, 35, 60, 0.563);
   --sombra: 0 8px 30px rgba(0, 0, 0, 0.2);
 }
 
 @media (prefers-color-scheme: dark) {
+  :root {
+    --primaria: #425234;
+    --secundaria: #38452c;
+    --background: #6b755c;
+    --preto: #ffffff;
+    --cinza: rgba(255, 255, 255, 0.563);
+  }
 }
 
 body {
-  background-color: var(--secundaria);
+  background-color: var(--background);
   background-image: url("../img/Background.png");
   background-repeat: repeat;
   background-size: 1150px;
+  min-height: 1160px;
 }
 
 * {
@@ -28,15 +36,21 @@ html {
   scroll-behavior: smooth;
 }
 
+/* PÁGINA PRINCIPAL */
+
 /* cabeçalho */
 
 header {
+  z-index: 100;
   background-color: var(--primaria);
   display: flex;
   align-items: center;
   padding: 10px;
   gap: 20px;
   box-shadow: var(--sombra);
+  position: fixed;
+  width: 100%;
+  top: 0;
 }
 
 header button {
@@ -44,6 +58,7 @@ header button {
   height: 30px;
   border: none;
   border-radius: 10px;
+  background-color: var(--secundaria);
 }
 
 header a {
@@ -64,6 +79,7 @@ header a {
 /* banner */
 
 #imagemBanner {
+  margin-top: 120px;
   position: relative;
   height: 500px;
   width: 100%;
@@ -71,41 +87,48 @@ header a {
   object-fit: cover;
 }
 
+#galeria {
+  display: flex;
+  justify-content: center;
+}
+
 #galeria img {
   height: 250px;
   width: 33%;
-  padding: 10px;
   object-fit: cover;
 }
 
 #galeria #img1 {
   object-position: center bottom;
+  padding: 0 7.5px;
 }
 
 #galeria #img2 {
   object-position: center;
+  padding: 0 7.5px;
 }
 
 #galeria #img3 {
   object-position: center;
+  padding: 0 7.5px;
 }
 
 #banner h1 {
-  font-size: 70px;
+  font-size: 90px;
   position: absolute;
   z-index: 1;
-  color: var(--secundariaEscura);
-  top: 320px;
+  color: var(--secundaria);
+  top: 310px;
   left: 50%;
   transform: translateX(-50%);
 }
 
 #banner h3 {
-  font-size: 35px;
+  font-size: 42px;
   font-style: italic;
   position: absolute;
   z-index: 1;
-  color: var(--secundariaEscura);
+  color: var(--secundaria);
   top: 405px;
   left: 50%;
   transform: translateX(-50%);
@@ -121,26 +144,49 @@ header a {
 
 #cardsProdutos {
   display: flex;
+  justify-content: center;
   padding: 10px;
   gap: 10px;
   flex-wrap: wrap;
 }
 
-.card {
-  background-color: var(--primaria);
+.card{
+  background-color: var(--secundaria);
+  transition: 0.3s;
+}
+
+.card:hover{
+  transform: translateY(-10px);
 }
 
 .card p {
   padding: 5px;
-  max-width: 300px;
+  width: 300px;
+  height: 120px;
 }
 
 .card #nomeTexto {
   font-style: italic;
+  color: var(--preto);
 }
 
 .card #descricaoTexto {
   color: var(--cinza);
+  position: absolute;
+  margin-top: -98px;
+}
+
+.card #precoTexto {
+  color: var(--preto);
+  position: absolute;
+  margin-top: -30px;
+}
+
+.card #estoqueTexto {
+  position: absolute;
+  margin-left: 220px;
+  margin-top: -30px;
+  color: var(--preto);
 }
 
 .card img {
@@ -152,11 +198,10 @@ header a {
 /* sobre nos */
 
 #sobreNos {
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
   margin-top: 25px;
   background-color: var(--primaria);
-  opacity: 50%;
+  opacity: 70%;
   width: 700px;
   padding: 20px;
   border-radius: 7px;
@@ -181,20 +226,304 @@ header a {
 #logoDeFundo {
   width: 100px;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin: 20px auto;
+  margin-bottom: 75px;
 }
 
 /* rodapé */
 
 footer {
+  z-index: 100;
   background-color: var(--primaria);
   padding: 20px;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
 }
 
 footer h3 {
   color: var(--cinza);
   text-align: center;
+}
+
+/* GUIA BOTÂNICO */
+
+/* título */
+
+#tituloG h1 {
+  color: var(--primaria);
+  text-align: center;
+  margin-top: 150px;
+  font-size: 70px;
+}
+
+#tituloG h3 {
+  color: var(--primaria);
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 25px;
+}
+
+/* COMO PLANTAR */
+
+#comoPlantar {
+  margin: 0 auto;
+  margin-top: 25px;
+  background-color: var(--primaria);
+  opacity: 70%;
+  width: 700px;
+  padding: 20px;
+  border-radius: 7px;
+  margin-bottom: 20px;
+}
+
+#comoPlantar h2 {
+  color: var(--preto);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#comoPlantar p {
+  max-width: 600px;
+  color: var(--cinza);
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* cards do guia */
+
+#cardsInfo {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.cardG {
+  background-color: var(--secundaria);
+}
+
+.cardG p {
+  padding: 5px;
+  width: 300px;
+  height: 135px;
+}
+
+.cardG #nomeTexto {
+  font-style: italic;
+  color: var(--preto);
+}
+
+.cardG #infoTexto {
+  color: var(--cinza);
+  position: absolute;
+  margin-top: -112px;
+}
+
+.cardG img {
+  width: 304px;
+  height: 180px;
+  object-fit: cover;
+}
+
+.cardG{
+  background-color: var(--secundaria);
+  transition: 0.3s;
+}
+
+.cardG:hover{
+  transform: scale(1.035);
+}
+
+/* voltar */
+
+#voltar {
+  margin-left: auto;
+}
+
+#voltar a {
+  font-size: 25px;
+}
+
+/* LOGIN */
+
+/* formulário */
+
+#login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#login a {
+  color: var(--preto);
+}
+
+#login h1 {
+  margin-bottom: 20px;
+  color: var(--preto);
+}
+
+#formLogin {
+  background-color: var(--primaria);
+  width: 550px;
+  height: 300px;
+  border-radius: 4px;
+  border: 3px solid var(--secundaria);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.email,
+.senha {
+  background-color: var(--primaria);
+  width: 350px;
+  height: 40px;
+  border-radius: 4px;
+  border: 3px solid var(--secundaria);
+  padding: 0 10px;
+}
+
+.email::placeholder,
+.senha::placeholder {
+  color: var(--cinza);
+  font-size: large;
+}
+
+.submitButton {
+  width: 100px;
+  padding: 12px;
+  background: #78ff69;
+  color: #3d7836;
+  border: none;
+  border-radius: 4px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.submitButton:hover {
+  background: #57bb4c;
+  transform: scale(1.05);
+}
+
+/* CADASTRO */
+
+/* formulário */
+
+#cadastro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#cadastro a {
+  color: var(--preto);
+}
+
+#cadastro h1 {
+  margin-bottom: 20px;
+  color: var(--preto);
+}
+
+#formCadastro {
+  background-color: var(--primaria);
+  width: 550px;
+  height: 300px;
+  border-radius: 4px;
+  border: 3px solid var(--secundaria);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.senhaConfirmacao {
+  background-color: var(--primaria);
+  width: 350px;
+  height: 40px;
+  border-radius: 4px;
+  border: 3px solid var(--secundaria);
+  padding: 0 10px;
+}
+
+.senhaConfirmacao::placeholder {
+  color: var(--cinza);
+  font-size: large;
+}
+
+/* AVALIACOES */
+
+/* formulário */
+
+#avaliacoes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 135px;
+}
+
+#avaliacoes h1 {
+  margin-bottom: 20px;
+  color: var(--preto);
+}
+
+#formAvaliacoes {
+  background-color: var(--primaria);
+  width: 550px;
+  height: 350px;
+  border-radius: 4px;
+  border: 3px solid var(--secundaria);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.nota {
+  background-color: var(--primaria);
+  width: 350px;
+  height: 40px;
+  border-radius: 4px;
+  border: 3px solid var(--secundaria);
+  padding: 0 10px;
+}
+
+.mensagem {
+  background-color: var(--primaria);
+  width: 350px;
+  height: 100px;
+  border-radius: 4px;
+  border: 3px solid var(--secundaria);
+  padding: 0 10px;
+}
+
+.mensagem::placeholder,
+.nota::placeholder {
+  color: var(--cinza);
+  font-size: large;
 }
