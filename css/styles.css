@@ -2,6 +2,7 @@
   --primaria: #ffffff;
   --secundaria: #f0f0f0;
   --background: #aeb89f;
+  --backgroundEscuro: #909885;
   --preto: #0f172a;
   --cinza: rgba(25, 35, 60, 0.563);
   --sombra: 0 8px 30px rgba(0, 0, 0, 0.2);
@@ -12,6 +13,7 @@
     --primaria: #425234;
     --secundaria: #38452c;
     --background: #6b755c;
+    --backgroundEscuro: #4e5542;
     --preto: #ffffff;
     --cinza: rgba(255, 255, 255, 0.563);
   }
@@ -125,6 +127,7 @@ header a {
 #banner h3 {
   font-size: 42px;
   font-style: italic;
+  white-space: nowrap;
   position: absolute;
   z-index: 1;
   color: var(--secundaria);
@@ -149,12 +152,12 @@ header a {
   flex-wrap: wrap;
 }
 
-.card{
+.card {
   background-color: var(--secundaria);
   transition: 0.3s;
 }
 
-.card:hover{
+.card:hover {
   transform: translateY(-10px);
 }
 
@@ -176,11 +179,19 @@ header a {
 }
 
 .card #precoTexto {
+  width: 80px;
+  height: 30px;
+  border-radius: 4px;
+  margin: 5px;
   color: var(--preto);
   position: absolute;
-  margin-top: -30px;
+  margin-top: -34px;
+  background-color: var(--background);
+  transition: 0.3s;
 }
-
+.card #precoTexto:hover {
+  background-color: var(--backgroundEscuro);
+}
 .card #estoqueTexto {
   position: absolute;
   margin-left: 220px;
@@ -327,12 +338,12 @@ footer h3 {
   object-fit: cover;
 }
 
-.cardG{
+.cardG {
   background-color: var(--secundaria);
   transition: 0.3s;
 }
 
-.cardG:hover{
+.cardG:hover {
   transform: scale(1.035);
 }
 
@@ -404,8 +415,8 @@ footer h3 {
 .submitButton {
   width: 100px;
   padding: 12px;
-  background: #78ff69;
-  color: #3d7836;
+  background: var(--background);
+  color: #000000;
   border: none;
   border-radius: 4px;
   font-size: 18px;
@@ -415,7 +426,7 @@ footer h3 {
 }
 
 .submitButton:hover {
-  background: #57bb4c;
+  background: var(--backgroundEscuro);
   transform: scale(1.05);
 }
 
@@ -538,11 +549,11 @@ footer h3 {
   flex-wrap: wrap;
 }
 
-.cardC{
+.cardC {
   background-color: var(--secundaria);
   transition: 0.3s;
 }
-.cardC:hover{
+.cardC:hover {
   transform: scale(1.035);
 }
 
@@ -560,11 +571,86 @@ footer h3 {
 .cardC #notaC {
   font-style: italic;
   color: var(--preto);
-    margin-top: -315px;
+  margin-top: -315px;
 }
 
 .cardC #mensagemC {
   color: var(--cinza);
   position: absolute;
   margin-top: -315px;
+}
+
+/* RELATÓRIOS */
+
+#relatorios {
+}
+
+#relatorios h1 {
+  margin-left: 20px;
+  margin-top: 180px;
+}
+
+#relatorios ul {
+  padding: 20px;
+  list-style: none;
+}
+
+#relatorios li {
+  background-color: var(--secundaria);
+  margin-top: 20px;
+  padding: 20px;
+  width: 100%;
+}
+
+/* ESTOQUE */
+
+#gerenciarEstoque {
+  background-color: var(--primaria);
+  width: 615px;
+  height: 300px;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  overscroll-behavior: none;
+}
+
+#gerenciarEstoque div {
+  display: flex;
+  background-color: var(--secundaria);
+  padding: 10px;
+  margin: 15px;
+  border-radius: 4px;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+#gerenciarEstoque div p {
+  flex: 1;
+  text-align: center;
+  margin: 0;
+}
+
+#gerenciarEstoque h1 {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  flex: 1;
+  text-align: center;
+  margin: 0;
+  color: var(--preto);
+}
+
+.dimEstoque {
+  border-radius: 4px;
+  width: 20px;
+  height: 20px;
+  background-color: rgb(255, 111, 111);
+  border: 2px solid rgb(143, 42, 42);
+}
+
+.aumEstoque {
+  margin-left: auto;
+  border-radius: 4px;
+  width: 20px;
+  height: 20px;
+  background-color: rgb(165, 255, 120);
+  border: 2px solid rgb(66, 173, 62);
 }
