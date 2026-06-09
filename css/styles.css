@@ -167,20 +167,18 @@ header a {
   height: 120px;
 }
 
-.card #nomeTexto {
+.nomeTexto {
   font-style: italic;
   color: var(--preto);
 }
 
-.card #descricaoTexto {
+.descricaoTexto {
   color: var(--cinza);
   position: absolute;
   margin-top: -98px;
 }
 
-.card #precoTexto {
-  width: 80px;
-  height: 30px;
+.card .precoTexto {
   border-radius: 4px;
   margin: 5px;
   color: var(--preto);
@@ -188,11 +186,14 @@ header a {
   margin-top: -34px;
   background-color: var(--background);
   transition: 0.3s;
+  width: 80px;
+  height: 30px;
 }
-.card #precoTexto:hover {
+
+.precoTexto:hover {
   background-color: var(--backgroundEscuro);
 }
-.card #estoqueTexto {
+.estoqueTexto {
   position: absolute;
   margin-left: 220px;
   margin-top: -30px;
@@ -561,23 +562,25 @@ footer h3 {
   padding: 5px;
   width: 300px;
   height: 345px;
+  font-size: 20px;
 }
 
-.cardC #nomeCliente {
+.nomeCliente {
   font-style: italic;
   color: var(--preto);
 }
 
-.cardC #notaC {
+.notaC {
   font-style: italic;
   color: var(--preto);
   margin-top: -315px;
 }
 
-.cardC #mensagemC {
+.mensagemC {
   color: var(--cinza);
   position: absolute;
   margin-top: -315px;
+  word-wrap: break-word;
 }
 
 /* RELATÓRIOS */
@@ -644,6 +647,7 @@ footer h3 {
   height: 20px;
   background-color: rgb(255, 111, 111);
   border: 2px solid rgb(143, 42, 42);
+  transition: 0.3s;
 }
 
 .aumEstoque {
@@ -653,4 +657,15 @@ footer h3 {
   height: 20px;
   background-color: rgb(165, 255, 120);
   border: 2px solid rgb(66, 173, 62);
+  transition: 0.3s;
+}
+
+.aumEstoque:hover {
+  transform: scale(1.1);
+  background-color: rgb(95, 214, 90);
+}
+
+.dimEstoque:hover {
+  transform: scale(1.1);
+  background-color: rgb(208, 63, 63);
 }
