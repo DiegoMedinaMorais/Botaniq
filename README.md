@@ -99,13 +99,9 @@ Possíveis melhorias e expansões para o projeto:
 
 ## 📂 Sobre o Projeto
 
-# 👨🏻‍💻 Sobre o Projeto
-
 A Botaniq é uma plataforma web desenvolvida com o objetivo de unir tecnologia e natureza em uma experiência digital intuitiva e organizada. O projeto foi concebido para demonstrar soluções voltadas ao gerenciamento e consulta de plantas e flores, oferecendo recursos para usuários, estoquistas e administradores. Além de destacar boas práticas de desenvolvimento front-end, a plataforma foi planejada para possibilitar futuras expansões e novas funcionalidades.
 
 ---
-
-## Licença
 
 ## 📄 Licença
 
