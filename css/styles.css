@@ -23,6 +23,7 @@ body {
   background-repeat: repeat;
   background-size: 1150px;
   min-height: 1160px;
+  padding-bottom: 80px;
 }
 
 * {
@@ -165,7 +166,8 @@ header a {
 }
 
 .card {
-  width: min(320px, 100%);
+  width: 320px;
+  height: 520px;
   background-color: var(--secundaria);
   border-radius: 0;
   overflow: hidden;
@@ -385,34 +387,57 @@ footer h3 {
 
 /* formulário */
 
-#login {
+#login,
+#cadastro {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  width: 100%;
+  min-height: calc(100vh - 120px);
+  padding: 120px 20px 20px;
+  text-align: center;
 }
 
-#login a {
+#avaliacoes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  padding: 180px 20px 20px;
+  text-align: center;
+}
+
+#login a,
+#cadastro a,
+#avaliacoes a {
   color: var(--preto);
+  display: inline-block;
+  text-align: center;
+  margin-top: 15px;
+  width: min(520px, 100%);
+  text-decoration: none;
+  font-weight: 600;
 }
 
-#login h1 {
+#login h1,
+#cadastro h1,
+#avaliacoes h1 {
   margin-bottom: 20px;
   color: var(--preto);
 }
 
-#formLogin {
+#formLogin,
+#formCadastro,
+#formAvaliacoes {
   background-color: var(--primaria);
-  width: 550px;
-  height: 300px;
+  width: min(520px, 100%);
+  max-width: 520px;
+  height: auto;
   border-radius: 4px;
   border: 3px solid var(--secundaria);
-
+  padding: 24px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -421,23 +446,43 @@ footer h3 {
 }
 
 .email,
-.senha {
+.senha,
+.senhaConfirmacao,
+.nota,
+.mensagem {
   background-color: var(--primaria);
-  width: 350px;
-  height: 40px;
+  width: min(450px, 100%);
   border-radius: 4px;
   border: 3px solid var(--secundaria);
   padding: 0 10px;
+  font-size: 16px;
+}
+
+.email,
+.senha,
+.senhaConfirmacao,
+.nota {
+  height: 40px;
+}
+
+.mensagem {
+  min-height: 120px;
+  height: auto;
+  padding: 12px 10px;
+  resize: vertical;
 }
 
 .email::placeholder,
-.senha::placeholder {
+.senha::placeholder,
+.senhaConfirmacao::placeholder,
+.nota::placeholder,
+.mensagem::placeholder {
   color: var(--cinza);
   font-size: large;
 }
 
 .submitButton {
-  width: 100px;
+  width: 160px;
   padding: 12px;
   background: var(--background);
   color: #000000;
@@ -458,158 +503,67 @@ footer h3 {
   transform: scale(0.9);
 }
 
-/* CADASTRO */
-
-/* formulário */
-
-#cadastro {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-#cadastro a {
-  color: var(--preto);
-}
-
-#cadastro h1 {
-  margin-bottom: 20px;
-  color: var(--preto);
-}
-
-#formCadastro {
-  background-color: var(--primaria);
-  width: 550px;
-  height: 300px;
-  border-radius: 4px;
-  border: 3px solid var(--secundaria);
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 15px;
-}
-
-.senhaConfirmacao {
-  background-color: var(--primaria);
-  width: 350px;
-  height: 40px;
-  border-radius: 4px;
-  border: 3px solid var(--secundaria);
-  padding: 0 10px;
-}
-
-.senhaConfirmacao::placeholder {
-  color: var(--cinza);
-  font-size: large;
-}
-
-/* AVALIACOES */
-
-/* formulário */
-
-#avaliacoes {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-top: 135px;
-  margin-bottom: 20px;
-}
-
-#avaliacoes h1 {
-  margin-bottom: 20px;
-  color: var(--preto);
-}
-
-#formAvaliacoes {
-  background-color: var(--primaria);
-  width: 550px;
-  height: 350px;
-  border-radius: 4px;
-  border: 3px solid var(--secundaria);
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 15px;
-}
-
-.nota {
-  background-color: var(--primaria);
-  width: 350px;
-  height: 40px;
-  border-radius: 4px;
-  border: 3px solid var(--secundaria);
-  padding: 0 10px;
-}
-
-.mensagem {
-  background-color: var(--primaria);
-  width: 350px;
-  height: 100px;
-  border-radius: 4px;
-  border: 3px solid var(--secundaria);
-  padding: 0 10px;
-}
-
-.mensagem::placeholder,
-.nota::placeholder {
-  color: var(--cinza);
-  font-size: large;
-}
-
 /* avaliações registradas */
+
+#avaliacoesCardsSection {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 0;
+  padding: 0 0 80px;
+}
 
 #avaliacoesCards {
   display: flex;
   justify-content: center;
-  padding: 10px;
-  gap: 10px;
   flex-wrap: wrap;
+  gap: 16px;
+  padding: 10px;
+  margin-top: 8px;
+  width: min(1060px, 100%);
+  max-width: 1060px;
 }
 
 .cardC {
+  width: min(320px, 100%);
   background-color: var(--primaria);
+  border: 3px solid var(--secundaria);
+  padding: 16px;
+  box-sizing: border-box;
   transition: 0.3s;
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
+
 .cardC:hover {
-  transform: scale(1.035);
+  transform: translateY(-5px);
 }
 
 .cardC p {
-  padding: 5px;
-  width: 300px;
-  height: 345px;
-  font-size: 20px;
+  padding: 0;
+  width: auto;
+  height: auto;
+  margin: 0;
 }
 
 .nomeCliente {
   font-style: italic;
   color: var(--preto);
+  font-size: 16px;
 }
 
 .notaC {
   font-style: italic;
   color: var(--preto);
-  margin-top: -315px;
+  margin: 0;
 }
 
 .cardC .mensagemC {
   color: var(--cinza);
-  position: absolute;
-  margin-top: -315px;
   word-wrap: break-word;
+  white-space: normal;
+  margin: 0;
 }
 
 /* RELATÓRIOS */
@@ -635,21 +589,22 @@ footer h3 {
 
 #gerenciarEstoque {
   background-color: var(--primaria);
-  width: 615px;
-  height: 300px;
-  scroll-snap-type: y mandatory;
-  overflow-y: scroll;
-  overscroll-behavior: none;
+  width: 320px;
+  height: 620;
+  height: auto;
+  max-height: ;
+  overflow-y: auto;
+  border: 3px solid var(--secundaria);
 }
 
 #gerenciarEstoque div {
   display: flex;
+  flex-direction: row;
+  align-items: center;
   background-color: var(--secundaria);
-  padding: 10px;
-  margin: 15px;
-  border-radius: 4px;
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
+  padding: 12px;
+  margin: 8px;
+  gap: 8px;
 }
 
 #gerenciarEstoque div p {
@@ -657,34 +612,37 @@ footer h3 {
   flex: 1;
   text-align: center;
   margin: 0;
+  min-width: 0;
 }
 
 #gerenciarEstoque h1 {
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
-  flex: 1;
   text-align: center;
-  margin: 0;
+  margin: 12px 0;
   color: var(--preto);
+  padding: 0 12px;
+  font-size: 20px;
 }
 
 .dimEstoque {
   border-radius: 4px;
-  width: 20px;
-  height: 20px;
+  width: 28px;
+  height: 28px;
   background-color: rgb(255, 111, 111);
   border: 2px solid rgb(143, 42, 42);
   transition: 0.3s;
+  cursor: pointer;
+  flex-shrink: 0;
 }
 
 .aumEstoque {
-  margin-left: auto;
   border-radius: 4px;
-  width: 20px;
-  height: 20px;
+  width: 28px;
+  height: 28px;
   background-color: rgb(165, 255, 120);
   border: 2px solid rgb(66, 173, 62);
   transition: 0.3s;
+  cursor: pointer;
+  flex-shrink: 0;
 }
 
 .aumEstoque:hover {
@@ -880,9 +838,42 @@ footer h3 {
   #comoPlantar,
   #formLogin,
   #formCadastro,
-  #formAvaliacoes,
-  #gerenciarEstoque {
+  #formAvaliacoes {
     padding: 18px 14px;
+  }
+
+  #gerenciarEstoque {
+    width: calc(100% - 16px);
+    max-width: 360px;
+    margin: 0 auto;
+    height: auto;
+    order: 0;
+  }
+
+  #gerenciarEstoque div {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 12px;
+    margin: 8px;
+  }
+
+  #gerenciarEstoque div p {
+    flex: 1;
+    text-align: center;
+    min-width: 0;
+  }
+
+  .dimEstoque,
+  .aumEstoque {
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+  }
+
+  .aumEstoque {
+    margin-left: 0;
   }
 
   #sobreNos p,
@@ -895,34 +886,23 @@ footer h3 {
     font-size: 16px;
   }
 
+  #avaliacoes {
+    padding: 130px 20px 20px;
+  }
+
   #logoDeFundo {
     width: 120px;
     margin-bottom: 40px;
   }
-
+  
   footer {
-    position: static;
-    margin-top: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
     padding: 16px 12px;
   }
 
   footer h3 {
     font-size: 14px;
-  }
-
-  #gerenciarEstoque {
-    width: 100%;
-    max-height: 360px;
-  }
-
-  #gerenciarEstoque div {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-  }
-
-  #gerenciarEstoque div p {
-    flex: none;
-    width: 100%;
   }
 }
