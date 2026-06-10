@@ -8,15 +8,13 @@
   --sombra: 0 8px 30px rgba(0, 0, 0, 0.2);
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    --primaria: #425234;
-    --secundaria: #38452c;
-    --background: #6b755c;
-    --backgroundEscuro: #4e5542;
-    --preto: #ffffff;
-    --cinza: rgba(255, 255, 255, 0.563);
-  }
+:root.dark {
+  --primaria: #425234;
+  --secundaria: #38452c;
+  --background: #6b755c;
+  --backgroundEscuro: #4e5542;
+  --preto: #ffffff;
+  --cinza: rgba(255, 255, 255, 0.563);
 }
 
 body {
@@ -61,6 +59,11 @@ header button {
   border: none;
   border-radius: 10px;
   background-color: var(--secundaria);
+  transition: 0.3s;
+}
+
+header button:hover {
+  transform: scale(1.2);
 }
 
 header a {
@@ -669,3 +672,4 @@ footer h3 {
   transform: scale(1.1);
   background-color: rgb(208, 63, 63);
 }
+

@@ -9,7 +9,7 @@
   <body>
     <header>
       <img class="logo" src="img/Logo.png" alt="Logo botaniq" />
-      <button id="tButton">☀️</button>
+      <button onclick="trocarTema()" id="tButton">☀️</button>
 
       <div id="links">
         <a href="relatorios.html">Relatórios</a>
@@ -33,6 +33,7 @@
 
     <section id="produtos">
       <h1>Produtos</h1>
+
       <div id="cardsProdutos">
         <div class="card">
           <img src="img/PhilodendronPinkPrincess.png" alt="Imagem do produto" />
@@ -41,9 +42,12 @@
             Planta rara com folhas escuras e detalhes rosas, muito valorizada na
             decoração.
           </p>
-          <p class="precoTexto">R$79,90</p>
+          <p onclick="comprar('Philodendron Pink Princess')" class="precoTexto">
+            R$79,90
+          </p>
           <p class="estoqueTexto">Estoque: -</p>
         </div>
+
         <div class="card">
           <img src="img/BlueVanda.png" alt="Imagem do produto" />
           <p class="nomeTexto">Blue Vanda</p>
@@ -51,9 +55,10 @@
             Orquídea rara de flores azuladas, símbolo de elegância e
             exclusividade.
           </p>
-          <p class="precoTexto">R$59,90</p>
+          <p onclick="comprar('Blue Vanda')" class="precoTexto">R$59,90</p>
           <p class="estoqueTexto">Estoque: -</p>
         </div>
+
         <div class="card">
           <img src="img/EspadaDeSaoJorge.png" alt="Imagem do produto" />
           <p class="nomeTexto">Espada-de-São-Jorge</p>
@@ -61,9 +66,12 @@
             Planta resistente e elegante, ideal para ambientes internos.
             Simboliza proteção e ajuda a purificar o ar.
           </p>
-          <p class="precoTexto">R$190,90</p>
+          <p onclick="comprar('Espada-de-São-Jorge')" class="precoTexto">
+            R$80,90
+          </p>
           <p class="estoqueTexto">Estoque: -</p>
         </div>
+
         <div class="card">
           <img src="img/Girassol.png" alt="Imagem do produto" />
           <p class="nomeTexto">Girassóis</p>
@@ -71,9 +79,10 @@
             Flores vibrantes que transmitem alegria, energia positiva e beleza
             natural.
           </p>
-          <p class="precoTexto">R$49,90</p>
+          <p onclick="comprar('Girassóis')" class="precoTexto">R$49,90</p>
           <p class="estoqueTexto">Estoque: -</p>
         </div>
+
         <div class="card">
           <img src="img/CostelaDeAdao.png" alt="Imagem do produto" />
           <p class="nomeTexto">Costela-de-Adão</p>
@@ -81,9 +90,10 @@
             Planta tropical com folhas marcantes, muito usada em decorações
             modernas.
           </p>
-          <p class="precoTexto">R$190,90</p>
+          <p onclick="comprar('Costela-de-Adão')" class="precoTexto">R$79,90</p>
           <p class="estoqueTexto">Estoque: -</p>
         </div>
+
         <div class="card">
           <img src="img/LirioDaPaz.png" alt="Imagem do produto" />
           <p class="nomeTexto">Lírio-da-Paz</p>
@@ -91,9 +101,10 @@
             Elegante e delicado, ajuda a purificar o ar e traz harmonia ao
             ambiente.
           </p>
-          <p class="precoTexto">R$35,90</p>
+          <p onclick="comprar('Lírio-da-Paz')" class="precoTexto">R$35,90</p>
           <p class="estoqueTexto">Estoque: -</p>
         </div>
+
         <div class="card">
           <img src="img/Suculenta.png" alt="Imagem do produto" />
           <p class="nomeTexto">Mini Planta Suculenta</p>
@@ -101,9 +112,12 @@
             Compacta, charmosa e fácil de cuidar, perfeita para pequenos
             espaços.
           </p>
-          <p class="precoTexto">R$15,90</p>
+          <p onclick="comprar('Mini Planta Suculenta')" class="precoTexto">
+            R$3,90
+          </p>
           <p class="estoqueTexto">Estoque: -</p>
         </div>
+
         <div class="card">
           <img src="img/PlantaCarnivora.png" alt="Imagem do produto" />
           <p class="nomeTexto">Planta Carnívora</p>
@@ -111,9 +125,12 @@
             Espécie exótica que captura pequenos insetos e chama atenção pelo
             visual único.
           </p>
-          <p class="precoTexto">R$24,90</p>
+          <p onclick="comprar('Planta Carnívora')" class="precoTexto">
+            R$24,90
+          </p>
           <p class="estoqueTexto">Estoque: -</p>
         </div>
+
         <div class="card">
           <img src="img/AlocasiaDragonScale.png" alt="Imagem do produto" />
           <p class="nomeTexto">Alocasia Dragon Scale</p>
@@ -121,18 +138,22 @@
             Planta exótica com folhas que lembram escamas de dragão, perfeita
             para colecionadores.
           </p>
-          <p class="precoTexto">R$79,90</p>
+          <p onclick="comprar('Alocasia Dragon Scale')" class="precoTexto">
+            R$79,90
+          </p>
           <p class="estoqueTexto">Estoque: -</p>
         </div>
+
         <div class="card">
           <img src="img/Lavanda.png" alt="Imagem do produto" />
           <p class="nomeTexto">Lavanda</p>
           <p class="descricaoTexto">
             Conhecida pelo aroma relaxante e pela beleza suave de suas flores.
           </p>
-          <p class="precoTexto">R$25,90</p>
+          <p onclick="comprar('Lavanda')" class="precoTexto">R$25,90</p>
           <p class="estoqueTexto">Estoque: -</p>
         </div>
+
         <div class="card">
           <img src="img/Orquideas.png" alt="Imagem do produto" />
           <p class="nomeTexto">Orquídeas</p>
@@ -140,18 +161,22 @@
             Flores delicadas e sofisticadas que trazem beleza e elegância para
             qualquer ambiente.
           </p>
-          <p class="precoTexto">R$59,90</p>
+          <p onclick="comprar('Orquídeas')" class="precoTexto">R$59,90</p>
           <p class="estoqueTexto">Estoque: -</p>
         </div>
+
         <div class="card">
           <img src="img/MarantaPenaDePavao.png" alt="Imagem do produto" />
-          <p class="nomeTexto">Maranta-pena-de-pavão</p>
+          <p class="nomeTexto">Maranta-Pena-de-Pavão</p>
           <p class="descricaoTexto">
             Folhagem tropical com desenhos marcantes e grande valor ornamental.
           </p>
-          <p class="precoTexto">R$49,90</p>
+          <p onclick="comprar('Maranta-Pena-de-Pavão')" class="precoTexto">
+            R$49,90
+          </p>
           <p class="estoqueTexto">Estoque: -</p>
         </div>
+
         <div class="card">
           <img src="img/BegoniaMaculata.png" alt="Imagem do produto" />
           <p class="nomeTexto">Begonia Maculata</p>
@@ -159,16 +184,21 @@
             Planta elegante, conhecida pelas folhas com pintas prateadas e verso
             avermelhado.
           </p>
-          <p class="precoTexto">R$27,90</p>
+          <p onclick="comprar('Begonia Maculata')" class="precoTexto">
+            R$27,90
+          </p>
           <p class="estoqueTexto">Estoque: -</p>
         </div>
+
         <div class="card">
           <img src="img/CalatheaTriostar.png" alt="Imagem do produto" />
           <p class="nomeTexto">Calathea Triostar</p>
           <p class="descricaoTexto">
             Planta ornamental de folhagem vibrante e visual sofisticado.
           </p>
-          <p class="precoTexto">R$39,90</p>
+          <p onclick="comprar('Calathea Triostar')" class="precoTexto">
+            R$39,90
+          </p>
           <p class="estoqueTexto">Estoque: -</p>
         </div>
       </div>
