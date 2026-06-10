@@ -86,8 +86,13 @@ header a {
 
 /* banner */
 
+#banner {
+  position: relative;
+  padding-top: 120px;
+}
+
 #imagemBanner {
-  margin-top: 120px;
+  margin-top: 0;
   position: relative;
   height: 500px;
   width: 100%;
@@ -126,7 +131,7 @@ header a {
   position: absolute;
   z-index: 1;
   color: var(--secundaria);
-  top: 310px;
+  top: 300px;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -138,7 +143,7 @@ header a {
   position: absolute;
   z-index: 1;
   color: var(--secundaria);
-  top: 405px;
+  top: 400px;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -160,57 +165,66 @@ header a {
 }
 
 .card {
+  width: min(320px, 100%);
   background-color: var(--secundaria);
+  border-radius: 0;
+  overflow: hidden;
   transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
 }
 
 .card:hover {
   transform: translateY(-10px);
 }
 
+.card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
 .card p {
-  padding: 5px;
-  width: 300px;
-  height: 120px;
+  padding: 10px 14px;
+  margin: 0;
+  width: auto;
+  height: auto;
+  position: static;
 }
 
 .nomeTexto {
   font-style: italic;
   color: var(--preto);
+  font-size: 18px;
 }
 
 .descricaoTexto {
   color: var(--cinza);
-  position: absolute;
-  margin-top: -98px;
+  margin-top: 8px;
+  font-size: 15px;
+  line-height: 1.5;
 }
 
 .card .precoTexto {
-  border-radius: 4px;
-  margin: 5px;
+  border-radius: 0;
+  margin: 10px 14px 0;
   color: var(--preto);
-  position: absolute;
-  margin-top: -34px;
   background-color: var(--background);
   transition: 0.3s;
-  width: 80px;
-  height: 30px;
+  width: fit-content;
+  height: auto;
+  border-radius: 6px;
 }
 
 .precoTexto:hover {
   background-color: var(--backgroundEscuro);
 }
-.estoqueTexto {
-  position: absolute;
-  margin-left: 220px;
-  margin-top: -30px;
-  color: var(--preto);
-}
 
-.card img {
-  width: 304px;
-  height: 180px;
-  object-fit: cover;
+.estoqueTexto {
+  color: var(--preto);
+  margin: 8px 14px 14px;
+  font-weight: 600;
 }
 
 /* sobre nos */
@@ -321,6 +335,8 @@ footer h3 {
 
 .cardG {
   background-color: var(--secundaria);
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
 .cardG p {
@@ -438,7 +454,7 @@ footer h3 {
   transform: scale(1.05);
 }
 
-.submitButton:active{
+.submitButton:active {
   transform: scale(0.9);
 }
 
@@ -564,6 +580,8 @@ footer h3 {
 .cardC {
   background-color: var(--primaria);
   transition: 0.3s;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 .cardC:hover {
   transform: scale(1.035);
@@ -595,9 +613,6 @@ footer h3 {
 }
 
 /* RELATÓRIOS */
-
-#relatorios {
-}
 
 #relatorios h1 {
   margin-left: 20px;
@@ -682,10 +697,232 @@ footer h3 {
   background-color: rgb(208, 63, 63);
 }
 
-.dimEstoque:active{
+.dimEstoque:active {
   transform: scale(0.9);
 }
 
-.aumEstoque:active{
+.aumEstoque:active {
   transform: scale(0.9);
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+  body {
+    background-size: auto;
+    min-height: 100vh;
+  }
+
+  header {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 12px 16px;
+  }
+
+  .logo {
+    height: 80px;
+  }
+
+  header button {
+    width: 36px;
+    height: 36px;
+  }
+
+  #links {
+    width: 100%;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  header a {
+    padding: 8px 10px;
+    font-size: 14px;
+  }
+
+  #imagemBanner {
+    margin-top: 70px;
+    height: auto;
+    padding: 8px;
+  }
+
+  #galeria img {
+    width: 33.3%;
+    padding: 8px 0;
+  }
+
+  #banner {
+    margin-top: -43px;
+  }
+
+  #banner h1 {
+    font-size: 40px;
+    position: absolute;
+    z-index: 1;
+    color: var(--secundaria);
+    top: 270px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  #banner h3 {
+    font-size: 25px;
+    font-style: italic;
+    white-space: nowrap;
+    position: absolute;
+    z-index: 1;
+    color: var(--secundaria);
+    top: 315px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  #produtos h1 {
+    margin-top: 10px;
+  }
+
+  #produtos h1,
+  #tituloG h1,
+  #tituloG h3,
+  #sobreNos h2,
+  #comoPlantar h2,
+  #avaliacoes h1,
+  #relatorios h1 {
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0 12px;
+  }
+
+  #cardsProdutos,
+  #cardsInfo,
+  #avaliacoesCards {
+    padding: 10px 12px 90px;
+    gap: 12px;
+  }
+
+  .card,
+  .cardG,
+  .cardC,
+  #formLogin,
+  #formCadastro,
+  #formAvaliacoes,
+  #sobreNos,
+  #comoPlantar,
+  #gerenciarEstoque,
+  #relatorios ul {
+    width: calc(100% - 24px);
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .card,
+  .cardG,
+  .cardC {
+    padding: 12px;
+    position: relative;
+  }
+
+  .card img,
+  .cardG img,
+  .cardC img,
+  #imagemBanner {
+    width: 100%;
+    height: auto;
+  }
+
+  .card p,
+  .cardG p,
+  .cardC p,
+  .email,
+  .senha,
+  .senhaConfirmacao,
+  .nota,
+  .mensagem {
+    width: 100%;
+    height: auto;
+    position: static;
+    margin: 8px 0;
+  }
+
+  .descricaoTexto,
+  .precoTexto,
+  .estoqueTexto,
+  .cardG #infoTexto,
+  .cardG #nomeTexto,
+  .notaC,
+  .cardC .mensagemC {
+    position: static;
+    margin: 0;
+    width: auto;
+    height: auto;
+    background-color: transparent;
+  }
+
+  .card .precoTexto {
+    display: inline-block;
+    margin: 8px 0;
+    padding: 10px 14px;
+    width: fit-content;
+    border-radius: 6px;
+    background-color: var(--background);
+  }
+
+  .card .estoqueTexto {
+    display: block;
+    color: var(--preto);
+    margin: 8px 0;
+  }
+
+  #sobreNos,
+  #comoPlantar,
+  #formLogin,
+  #formCadastro,
+  #formAvaliacoes,
+  #gerenciarEstoque {
+    padding: 18px 14px;
+  }
+
+  #sobreNos p,
+  #comoPlantar p,
+  .mensagem::placeholder,
+  .nota::placeholder,
+  .email::placeholder,
+  .senha::placeholder,
+  .senhaConfirmacao::placeholder {
+    font-size: 16px;
+  }
+
+  #logoDeFundo {
+    width: 120px;
+    margin-bottom: 40px;
+  }
+
+  footer {
+    position: static;
+    margin-top: 20px;
+    padding: 16px 12px;
+  }
+
+  footer h3 {
+    font-size: 14px;
+  }
+
+  #gerenciarEstoque {
+    width: 100%;
+    max-height: 360px;
+  }
+
+  #gerenciarEstoque div {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  #gerenciarEstoque div p {
+    flex: none;
+    width: 100%;
+  }
 }
