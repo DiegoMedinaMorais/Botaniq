@@ -83,6 +83,7 @@ Possíveis melhorias e expansões para o projeto:
 * Integração com WhatsApp para contato direto com clientes
 * Aprimoramento dos relatórios administrativos
 * Melhorias contínuas na experiência e acessibilidade da plataforma
+* Aprimoramento da validação de e-mails no cadastro, verificando a existência e a validade dos endereços informados pelos usuários.
 
 ---
 

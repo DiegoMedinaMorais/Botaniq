@@ -66,6 +66,10 @@ header button:hover {
   transform: scale(1.2);
 }
 
+header button:active {
+  transform: scale(0.9);
+}
+
 header a {
   text-decoration: none;
   color: var(--preto);
@@ -434,6 +438,10 @@ footer h3 {
   transform: scale(1.05);
 }
 
+.submitButton:active{
+  transform: scale(0.9);
+}
+
 /* CADASTRO */
 
 /* formulário */
@@ -554,7 +562,7 @@ footer h3 {
 }
 
 .cardC {
-  background-color: var(--secundaria);
+  background-color: var(--primaria);
   transition: 0.3s;
 }
 .cardC:hover {
@@ -579,7 +587,7 @@ footer h3 {
   margin-top: -315px;
 }
 
-.mensagemC {
+.cardC .mensagemC {
   color: var(--cinza);
   position: absolute;
   margin-top: -315px;
@@ -630,6 +638,7 @@ footer h3 {
 }
 
 #gerenciarEstoque div p {
+  color: var(--preto);
   flex: 1;
   text-align: center;
   margin: 0;
@@ -673,3 +682,10 @@ footer h3 {
   background-color: rgb(208, 63, 63);
 }
 
+.dimEstoque:active{
+  transform: scale(0.9);
+}
+
+.aumEstoque:active{
+  transform: scale(0.9);
+}

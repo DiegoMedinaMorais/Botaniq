@@ -20,9 +20,6 @@ let senhaAdmin = "admin";
 let emailEstoquista = "estoquista123@gmail.com";
 let senhaEstoquista = "estoque";
 
-let emailUsuario = "";
-let senhaUsuario = "";
-
 let formCadastro = document.getElementById("formCadastro");
 
 if (formCadastro) {
@@ -42,6 +39,16 @@ if (formCadastro) {
 
     if (senha !== senhaConfirmacao) {
       alert("As senhas não correspondem");
+      return;
+    }
+
+    if (email.length <= 10 || !email.includes("@")) {
+      alert("Email inválido. Deve conter '@' e ter mais de 10 caracteres.");
+      return;
+    }
+
+    if (senha.length < 4) {
+      alert("A senha deve ter pelo menos 4 letras.");
       return;
     }
 
@@ -68,8 +75,12 @@ if (formLogin) {
   formLogin.addEventListener("submit", function (e) {
     e.preventDefault();
 
-    let emailDigitado = document.getElementsByClassName("email")[0].value.trim();
-    let senhaDigitada = document.getElementsByClassName("senha")[0].value.trim();
+    let emailDigitado = document
+      .getElementsByClassName("email")[0]
+      .value.trim();
+    let senhaDigitada = document
+      .getElementsByClassName("senha")[0]
+      .value.trim();
 
     if (!emailDigitado || !senhaDigitada) {
       alert("Preencha todos os campos");
@@ -103,7 +114,7 @@ if (formLogin) {
       localStorage.setItem("tipoUsuario", "Cliente");
       localStorage.setItem("emailUsuario", emailDigitado);
       localStorage.setItem("senhaUsuario", senhaDigitada);
-      window.location.href = "index.html";
+      window.location.href = "telaPrincipal.html";
     } else {
       alert("Email ou senha incorretos.");
     }
@@ -145,6 +156,20 @@ if (formAvaliacoes) {
 
     if (!email || !nota || !mensagem) {
       alert("Preencha todos os campos");
+      return;
+    }
+    if (email.length <= 10 || !email.includes("@")) {
+      alert("Email inválido. Deve conter '@' e ter mais de 10 caracteres.");
+      return;
+    }
+
+    if (mensagem.length < 5) {
+      alert("A mensagem deve ter pelo menos 5 letras.");
+      return;
+    }
+
+    if (Number(nota) < 0 || Number(nota) > 5) {
+      alert("A nota deve ser um número entre 1 e 5.");
       return;
     }
 
@@ -293,7 +318,10 @@ if (tipoUsuario === "Administrador") {
   links.forEach((link) => {
     link.href = "telaEstoquista.html";
   });
-}
+} else if (tipoUsuario === "Cliente") {
+  links.forEach((link) => {
+    link.href = "telaPrincipal.html";
+  })}
 
 /* RELÁTORIOS DE COMPRA */
 
@@ -302,8 +330,8 @@ let lista = document.getElementById("listaRelatorios");
 let relatorios = JSON.parse(localStorage.getItem("relatorios")) || [];
 
 // carrega relatórios ao entrar na página
-if (lista) {
 
+if (lista) {
   lista.innerHTML = "";
 
   relatorios.forEach((r, index) => {
@@ -333,11 +361,18 @@ const adicionarRelatorio = (nomePlanta, preco) => {
 
 /* BOTÃO LIGHT E DARK */
 
-let botaoTema = document.getElementById("tButton")
-
+let botaoTema = document.getElementById("tButton");
 let root = document.documentElement;
+
+if (localStorage.getItem("tema") === "dark") {
+  root.classList.add("dark");
+}
 
 botaoTema.addEventListener("click", () => {
   root.classList.toggle("dark");
+  if (root.classList.contains("dark")) {
+    localStorage.setItem("tema", "dark");
+  } else {
+    localStorage.setItem("tema", "light");
+  }
 });
-
