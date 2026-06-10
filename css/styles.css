@@ -169,12 +169,10 @@ header a {
   width: 320px;
   height: 520px;
   background-color: var(--secundaria);
-  border-radius: 0;
   overflow: hidden;
   transition: 0.3s;
   display: flex;
   flex-direction: column;
-  gap: 0;
 }
 
 .card:hover {
@@ -590,9 +588,7 @@ footer h3 {
 #gerenciarEstoque {
   background-color: var(--primaria);
   width: 320px;
-  height: 620;
-  height: auto;
-  max-height: ;
+  height: 520px;
   overflow-y: auto;
   border: 3px solid var(--secundaria);
 }
