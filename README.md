@@ -2,7 +2,7 @@
 
 ## 1. Nome do projeto e integrantes do grupo
 - Nome do projeto: Botaniq
-- Integrantes do grupo: Diego Medina Morais e Annie Vitoria Souza de Jesus
+- Integrantes do grupo: Diego Medina Morais e Anny Vitoria Souza de Jesus
 
 ## 2. Problema & Solução
 - Problema: usuários e gestores de um e-commerce de plantas precisam de uma interface centralizada para consultar produtos, cadastrar contas, enviar avaliações, consultar informações de cultivo e gerenciar o estoque e relatórios.
