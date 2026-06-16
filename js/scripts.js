@@ -370,7 +370,7 @@ if (localStorage.getItem("tema") === "dark") {
 
 botaoTema.addEventListener("click", () => {
   root.classList.toggle("dark");
-  if (root.classList.contains("dark")) {
+  if (root.classList.contains("dark")) { 
     localStorage.setItem("tema", "dark");
   } else {
     localStorage.setItem("tema", "light");

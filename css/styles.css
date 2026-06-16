@@ -167,14 +167,12 @@ header a {
 
 .card {
   width: 320px;
-  height: 520px;
+  height: 535px;
   background-color: var(--secundaria);
-  border-radius: 0;
   overflow: hidden;
   transition: 0.3s;
   display: flex;
   flex-direction: column;
-  gap: 0;
 }
 
 .card:hover {
@@ -189,10 +187,6 @@ header a {
 
 .card p {
   padding: 10px 14px;
-  margin: 0;
-  width: auto;
-  height: auto;
-  position: static;
 }
 
 .nomeTexto {
@@ -209,13 +203,11 @@ header a {
 }
 
 .card .precoTexto {
-  border-radius: 0;
-  margin: 10px 14px 0;
   color: var(--preto);
   background-color: var(--background);
   transition: 0.3s;
   width: fit-content;
-  height: auto;
+  margin: 10px;
   border-radius: 6px;
 }
 
@@ -225,7 +217,6 @@ header a {
 
 .estoqueTexto {
   color: var(--preto);
-  margin: 8px 14px 14px;
   font-weight: 600;
 }
 
@@ -490,7 +481,6 @@ footer h3 {
   border-radius: 4px;
   font-size: 18px;
   font-weight: 600;
-  cursor: pointer;
   transition: 0.4s;
 }
 
@@ -590,9 +580,7 @@ footer h3 {
 #gerenciarEstoque {
   background-color: var(--primaria);
   width: 320px;
-  height: 620;
-  height: auto;
-  max-height: ;
+  height: 535px;
   overflow-y: auto;
   border: 3px solid var(--secundaria);
 }
@@ -630,8 +618,6 @@ footer h3 {
   background-color: rgb(255, 111, 111);
   border: 2px solid rgb(143, 42, 42);
   transition: 0.3s;
-  cursor: pointer;
-  flex-shrink: 0;
 }
 
 .aumEstoque {
@@ -641,8 +627,6 @@ footer h3 {
   background-color: rgb(165, 255, 120);
   border: 2px solid rgb(66, 173, 62);
   transition: 0.3s;
-  cursor: pointer;
-  flex-shrink: 0;
 }
 
 .aumEstoque:hover {
@@ -668,7 +652,6 @@ footer h3 {
 @media (max-width: 768px) {
   body {
     background-size: auto;
-    min-height: 100vh;
   }
 
   header {
@@ -749,19 +732,15 @@ footer h3 {
   #comoPlantar h2,
   #avaliacoes h1,
   #relatorios h1 {
-    margin-left: 0;
-    margin-right: 0;
     padding: 0 12px;
   }
 
-  #cardsProdutos,
   #cardsInfo,
   #avaliacoesCards {
     padding: 10px 12px 90px;
     gap: 12px;
   }
 
-  .card,
   .cardG,
   .cardC,
   #formLogin,
@@ -776,14 +755,12 @@ footer h3 {
     margin: 0 auto;
   }
 
-  .card,
   .cardG,
   .cardC {
     padding: 12px;
     position: relative;
   }
 
-  .card img,
   .cardG img,
   .cardC img,
   #imagemBanner {
@@ -791,7 +768,6 @@ footer h3 {
     height: auto;
   }
 
-  .card p,
   .cardG p,
   .cardC p,
   .email,
@@ -801,7 +777,6 @@ footer h3 {
   .mensagem {
     width: 100%;
     height: auto;
-    position: static;
     margin: 8px 0;
   }
 
@@ -819,21 +794,6 @@ footer h3 {
     background-color: transparent;
   }
 
-  .card .precoTexto {
-    display: inline-block;
-    margin: 8px 0;
-    padding: 10px 14px;
-    width: fit-content;
-    border-radius: 6px;
-    background-color: var(--background);
-  }
-
-  .card .estoqueTexto {
-    display: block;
-    color: var(--preto);
-    margin: 8px 0;
-  }
-
   #sobreNos,
   #comoPlantar,
   #formLogin,
@@ -842,39 +802,20 @@ footer h3 {
     padding: 18px 14px;
   }
 
+    #comoPlantar{
+      width: 320px;
+    }
+
+  #sobreNos{
+    width: 320px;
+    margin: 37px;
+  }
+
   #gerenciarEstoque {
-    width: calc(100% - 16px);
-    max-width: 360px;
-    margin: 0 auto;
-    height: auto;
-    order: 0;
+    width: 320px;
+    height: 535px;
   }
 
-  #gerenciarEstoque div {
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 8px;
-    padding: 10px 12px;
-    margin: 8px;
-  }
-
-  #gerenciarEstoque div p {
-    flex: 1;
-    text-align: center;
-    min-width: 0;
-  }
-
-  .dimEstoque,
-  .aumEstoque {
-    width: 28px;
-    height: 28px;
-    flex-shrink: 0;
-  }
-
-  .aumEstoque {
-    margin-left: 0;
-  }
 
   #sobreNos p,
   #comoPlantar p,
@@ -905,4 +846,5 @@ footer h3 {
   footer h3 {
     font-size: 14px;
   }
+
 }
